@@ -339,7 +339,7 @@
           
             let url = this.dataset.url;
 
-            let confirmation = window.confirm("Do you really wish to delete this address");
+            let confirmation = window.confirm("Do you really wish to delete this address?");
 
             if (confirmation){
               document.querySelector(`form[action="${url}"]`).submit()
