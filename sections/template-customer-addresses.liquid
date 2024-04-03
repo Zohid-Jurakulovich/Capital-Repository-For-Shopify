@@ -159,15 +159,9 @@
             
             <div class="flex flex-row gap-2">
               <button x-on:click="address_{{ address.id }}= true" class="w-full text-xs text-white bg-gray-700 hover:bg-gray-900 font-medium py-2">Edit</button>
-              <button 
-                
-                class="w-full text-xs font-medium text-gray-700 border py-2"
-
+              <button class="w-full text-xs font-medium text-gray-700 border py-2" 
                 data-url="{{ address.url }}"
-              
-                data-delete-address
-              
-              >Delete</button>
+               data-delete-address>Delete</button>
             </div>
 
             <form action="{{ address.url }}" method="post">
@@ -336,7 +330,7 @@
 
       initDeleteAddressButtons(){
       
-        const deleteButtons = document.querySelectorAll("data-delete-address")
+        const deleteButtons = document.querySelectorAll("button[data-delete-address]")
 
         if(deleteButtons.length < 1) return;
 
@@ -348,7 +342,7 @@
             let confirmation = window.confirm("Do you really wish to delete this address");
 
             if (confirmation){
-              document.querySelector(`form[action]="${url}"`).submit()
+              document.querySelector(`form[action="${url}"]`).submit()
             }
 
 
